@@ -1,471 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="千叶豆腐在 Github 上的个人博客">
-    <meta name="keyword" content="">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Tofu" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        Tofu&#39;s blog
-        
-    </title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
 
-    <link rel="canonical" href="http://jesscannon29.github.io/">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <!-- Bootstrap Core CSS -->
-    
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-
-
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/blog-style.css">
-
-
-    <!-- Pygments Github CSS -->
-    
-<link rel="stylesheet" href="/css/syntax.css">
-
-<meta name="generator" content="Hexo 8.1.2"></head>
-
-<style>
-
-    header.intro-header {
-        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
-" data-ishome = "true" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    Tofu
-                </span>
-                's Blog
-            </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-					
-                    
-                        
-							
-                        <li>
-                            <a href="/categories/">ip分类</a>
-                        </li>
-							
-						
-                    
-					
-					
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-<!-- Main Content -->
-
-
-<style>
-
-    .custom-haojen-container .post-preview:nth-of-type(1),
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        text-align: center;
-        background-repeat: no-repeat;
-        border-radius: 3px;
-        background-size: cover;
-        padding: 0;
-        height: 300px;
-        display: table;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.16);
-    }
-
-    /*去掉诗歌的背景图片*/
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        background-image: none !important;
-        background-color: rgba(255, 248, 220, 0.5);
-    }
-
-    .custom-haojen-container .post-preview:nth-child(1) h2,
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
-    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
-        letter-spacing: 1px;
-        color: #fff;
-        margin-top: 0;
-        padding-left: 60px;
-        padding-right: 60px;
-    }
-
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
-        font-size: .9em;
-        font-weight: 300;
-        margin-top: 0;
-    }
-
-    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
-        letter-spacing: 6px;
-        font-size: 18px;
-        font-family: unset;
-        font-weight: 400;
-        color: rgba(0, 0, 0, .75)
-    }
-
-    /*不显示摘要*/
-    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
-        display: none
-    }
-
-    /*只第一个显示背景图片*/
-    .custom-haojen-container .post-preview:not(:nth-child(1)) {
-        background-image: none !important;
-    }
-
-    /*第一个分界线去掉*/
-    .custom-haojen-container hr:nth-of-type(1) {
-        display: none;
-    }
-
-    /*主题*/
-    .custom-haojen-container .post-preview:nth-of-type(1) > a {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    /*诗词标题*/
-    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-        font-size: 35px;
-        font-family: STKaiti;
-        color: rgba(0, 0, 0, .8);
-    }
-
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
-        color: #0e2231;
-    }
-
-    @media (max-width: 768px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 240px;
-        }
-
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 28px !important;
-            margin-top: 0;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 18px;
-            font-weight: 400;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .custom-haojen-container .post-preview:nth-of-type(1) > a {
-            padding: 20px
-        }
-    }
-
-    /*手机屏幕*/
-    @media (max-width: 400px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 195px;
-        }
-
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 20px !important;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 16px;
-        }
-
-        .custom-haojen-container .post-preview:nth-child(1) a {
-            padding: 30px 20px;
-        }
-    }
-</style>
-
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src=""/>
-                        <h5><a href="/about/">千叶豆腐</a></h5>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2026/07/26/planetarium/">
-        <h2 class="post-title">
-            ykkn|Planetarium
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2026-07-26
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                最近，有点沉迷ASMR呢。志崎总是个爱追潮流的人，在手机上打开她半懂不懂的α波舒缓音乐挂上音响，一时间不知道该做什么好——自从恢复自由身后便忙碌起来，如此单纯的闲暇已经是久违了。
-眼神不自觉游移向茶几上那个精致的纸盒，那是中岛由贵送给她的礼物。虽然之前在直播里已经开封了，但她还没得空好好安装它—..
-            </p>
-        </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha256-4Lad8m4ZWW1Lgb9+sMVLYEfnIh7BjV1NQMEe79Pviks=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jesscannon29.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.29.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Tofu&#39;s Archive">
+<meta property="og:url" content="https://jesscannon29.github.io/index.html">
+<meta property="og:site_name" content="Tofu&#39;s Archive">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Tofu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://jesscannon29.github.io/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Tofu's Archive</title>
+  
+
+
+
+
+
+
+
+
+  
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-search popup-trigger" aria-label="Search" role="button">
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Tofu's Archive</h1>
+      <i class="logo-line"></i>
     </a>
+  </div>
 
+  <div class="site-nav-toggle" aria-label="Toggle navigation bar" role="button">
+      <i class="fa fa-ellipsis fa-fw fa-lg"></i>
+  </div>
 </div>
 
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-layer-group fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tofu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://jesscannon29.github.io/2026/07/26/planetarium/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tofu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tofu's Archive">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Tofu's Archive">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/07/26/planetarium/" class="post-title-link" itemprop="url">ykkn|Planetarium</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-07-26 17:35:00" itemprop="dateCreated datePublished" datetime="2026-07-26T17:35:00+08:00">2026-07-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-11-10 00:54:19" itemprop="dateModified" datetime="2026-11-10T00:54:19+08:00">2026-11-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BanG-Dream-RPS/" itemprop="url" rel="index"><span itemprop="name">BanG Dream!(RPS)</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BanG-Dream-RPS/ykkn/" itemprop="url" rel="index"><span itemprop="name">ykkn</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近，有点沉迷ASMR呢。志崎总是个爱追潮流的人，在手机上打开她半懂不懂的α波舒缓音乐挂上音响，一时间不知道该做什么好——自从恢复自由身后便忙碌起来，如此单纯的闲暇已经是久违了。</p>
+<p>眼神不自觉游移向茶几上那个精致的纸盒，那是中岛由贵送给她的礼物。虽然之前在直播里已经开封了，但她还没得空好好安装它——毕竟是一台相当专业的星象仪。</p>
+<p>一个女人送给另一个女人星象仪……或许并不存在什么特殊的意义，如果她们只是单纯的友人。只可惜，她们远远不止是单纯的友人。她听中岛提过那部著名的百合动画，并未听漏其中主角送给其心上人的定情礼物同样是一台星象仪；所以她从善如流地专门在直播中拆封它，换得粉丝们激动的刷屏，今天的营业指标也达到了呢。</p>
+<p>是啊，她们是营业关系。屏幕前、舞台上必须做出微妙的氛围感，不能太亲近，那样就太刻意；不能疏远太久，那样粉丝会流失。最好就是平时不互动，一互动就意义非凡引人遐思，这样就算是完成了一次优质的百合营业。</p>
+<p>嗯……这是投影片，要先接上电源，放在合适的高度调焦……啊，可以了。志崎把星象仪抱回卧室，以一个相当滑稽的姿势趴在床头柜上调试着设备——她起初转了好一会调焦轮盘却一点都没反应，这才发现防尘盖没取下来……嘛，这也是常有的事。打开防尘盖，扇形光柱从圆球形的星象仪中一下子冒出，令她想到了那个神话：赫拉的乳汁泼洒下来成了银河，所以它的别名才叫“Milky Way”。手指仔细转动轮盘，转过一定角度就会发出轻微的“咔哒”声响。她出神地抬头凝望着天花板上糊成一团的点点亮光，直到如同高度近视戴上眼镜一样“啪”的一下骤然变清晰。</p>
+<p>噢，装投影片的时候没注意，原来是带星座线的版本。打开时间流逝的开关，按下流星按钮，志崎翻身上床，双手交叠放在小腹。</p>
+<p>那是猎户座和昴星团。那是英仙座，帅气的珀尔修斯。那是神庭的斟酒人水瓶座。她久违地忆起多年前在雪城待过的那短暂时光，和朋友们一起在半夜溜出校舍边喝酒边躺在草地上看星星，那时友人教授她的星座知识，她到现在都没忘。</p>
+<p>啊，有流星……目光追随着流星的尾巴一路穿越夜空，直到它被吞没在银河深处。当时第一次用肉眼看到银河时她其实没有多少实感……如同暗紫色的面纱罩在天空，隐隐约约能够分辨出条带的形状，那就是我们身处其中的银河系。星象仪映照出的银河自然是更加璀璨，银白色的光带劈开了整个夜空，仔细去看能够辨别出其中一个一个密密麻麻的光点，但终究还是太过纷繁。</p>
+<p>牛郎星、织女星，在夏天是最闪亮的几颗星之一。跨越银河斜斜相对，所谓的那些“鹊桥相会”，作为一种幻想还算是很浪漫……</p>
+<p>中岛由贵与她，即便平日里几乎一周能见到一次，她却感觉自己像是在银河旁苦苦等待的织女，又或者是牛郎？这不重要……她只是单纯地觉得，她好久好久没有见到“中岛由贵”了。也许其实是志崎已经分不清了，分不清哪一个是营业的她，哪一个是卸下防备的她……她很纯粹地沉沦于其中，沉沦于这个商业的游戏。</p>
+<p>年纪比自己小，却是业界的大前辈，在营业方面也能称得上是自己的老师了。一直以来都承蒙她照顾了，不管是节目里不经意的肢体接触，特意挑选过角度的合照，还是炽烈到令人面红的告白。在那之外，她是个好朋友。年纪相仿的两人起初几乎是无话不谈，亲密地喊着彼此独一无二的昵称，私下里一起喝酒谈天，聊着无所谓的话题，在异国的酒店里一起喝得横七竖八，见过彼此最狼狈的模样。</p>
+<p>志崎起初很不安，她没有自信自己能做好这些需要“演技”的营业，直到她发现和中岛营业时她只需要剖开一片真心。那些举动、那些话语，不含一分虚假，全部都是她的真情流露，而这样的效果意外地很不错。她并不在乎中岛的营业中真心占了几分，毕竟她们在镜头之下同样是亲密的朋友，没有镜头时中岛没有必要继续演戏。</p>
+<p>“ゆっき，你真的没事？”</p>
+<p>“かのんちゃん太夸张啦。坐下来腿就不疼了。”</p>
+<p>“嗯……那就好。不要太勉强自己哦。”</p>
+<p>她又在逞强了。两个小时的live需要连续站立，她又是负重的贝斯手……本身腿就疼还要假装没事地把重心压上去。</p>
+<p>“かのんちゃん总是很关心我呢。”</p>
+<p>“嗯，因为ゆっき总是不够关心自己。”</p>
+<p>对方微微睁大眼睛，沉默了一瞬，接着用双手拢住志崎放在膝盖上的右手，别扭地垂下头。</p>
+<p>她什么都没有说。或许她说了？但志崎的心跳声已经大到盖住了任何外界的声音，她只能听见自己的脑海里盘旋着一句话：</p>
+<p>“我喜欢上了中岛由贵。”</p>
 <hr>
+<p>她沉溺在平淡又乏味的回忆里，不知何时回忆成了梦境，直到她再次睁开眼睛遇上熟悉的夜空。</p>
+<p>下次要记得开定时关机。</p>
+<p>今天是Roselia的例行练习日，她又一次要见到中岛由贵，但不是她想要见到的那个“中岛由贵”。自从她意识到自己的恋心之后，中岛不知道是不是因为发现了她的感情，营业以外的时间和她的交际减少到了令她无比困惑的地步，她在别的地方与别的女孩照常营业，她在志崎不在的镜头前大谈志崎的神秘魅力，说着好想要更加靠近、更加了解。</p>
+<p>那么你又为什么不愿意来见我呢？用你最本真的模样？</p>
+<p>“ゆきおさん？”</p>
+<p>“かのんちゃん？！怎么了？吓死我啦……”</p>
+<p>“ゆきおさん明明是休息时间却一直不说话，我有点好奇。”</p>
+<p>“啊哈哈，かのんちゃん一如既往地关心我呢。”</p>
+<p>“不开心吗？”</p>
+<p>“没有哦。”</p>
+<p>“那就好，ゆきおさん今晚要不要来我家看星星？”</p>
+<p>“咦？”</p>
+<p>见对面那个短发少年一脸迷惑的模样，志崎在心里暗自轻笑起来，她从初见面就觉得中岛真的太可爱，不愧是去买酒会被认成初中生的娃娃脸。</p>
+<p>“啊，是那个星象仪对吧！说实话我还挺好奇的呢，毕竟我自己还没有用过。”</p>
+<p>“那ゆきおさん记得带酒来喔。”</p>
+<p>志崎话毕便回头去确认键盘的音色，错过了中岛立刻下撇的嘴角和紧抓住椅边的双手。</p>
+<p>“欸～かのんちゃん居然把它放在床边吗！”</p>
+<p>“嗯，睡觉之前看着星星，感觉很浪漫呢。”</p>
+<p>不是第一次来志崎家了，中岛却还是停不下来地小鹿乱撞——虽然很土气，但她觉得只有这个土气的词才能描绘她当下的状态。虽然不是第一次来她家，但确实是第一次来她的卧室，此前都只有在客厅里和她一同喝酒，大部分时候也伴着其她友人。</p>
+<p>怎么办……之前那样故意疏远她，かのんちゃん还愿意对我这么好，果然我这样很卑劣吧。</p>
+<p>“ゆきおさん？”</p>
+<p>长长的睫毛突然忽闪着闯入视野，中岛一个趔趄绊了自己一下，鼻梁撞上硬物，酸麻感顿时直冲脑门。</p>
+<p>“嘶——对不起かのんちゃん！我走神了……”</p>
+<p>鼻头的血管一下一下跳动着，火辣辣的温度似乎是加热了鼻间的空气，令她从进门开始就隐约闻到的女性气息越发浓烈。还好没流鼻血……不然就要弄脏かのんちゃん的衣服了。呼……</p>
+<p>不对！</p>
+<p>后知后觉地体会到胸前不可思议的柔软，她一只手扒着志崎裸露的肩膀，另一只手圈住志崎的腰，整个人都像个树袋熊一样挂在她身上。</p>
+<p>“哇啊啊啊！”</p>
+<p>“ゆっき，来之前就喝上了吗？可是我没闻到酒味……”</p>
+<p>不是，这个人怎么会这么冷静呢？中岛像是被火烫到了一般从志崎身上跳开，差一点就又要把自己绊倒。果然……抱有那些不安分感情的，只有自己而已。</p>
+<p>志崎转过身去没有在看她，若是她面对着中岛，中岛就绝不会这么想了。不过志崎有自己的理由——在中岛到来之前她便已经开始小酌，那么脸上的红晕便自然有了毫无暧昧色彩的解释。</p>
+<p>逃也似的回到客厅去取来自己带的清酒，又拐进志崎的厨房去翻找玻璃酒杯，故意弄出叮呤哐啷的声响来掩盖自己的心跳，心乱如麻的中岛如今没有余裕再去仔细想志崎邀自己来卧室背后真正的欲求。</p>
+<p>“ゆっき，没事吧？我听到很大的声音……”</p>
+<p>“没事没事～かのんちゃん动作好快呢。”</p>
+<p>不知何时志崎已经将星象仪摆在床头柜上调整完毕，斜靠在床头板上，躺在距离中岛更远的那一侧。梦境一般虚幻的光亮从星象仪当中倾泻而出，在志崎卧室宽阔的天花板上投上巨大的圆形图案，就如同真正的天幕。中岛一时间看得呆了，忘记手里还抱着珍贵的酒瓶，看了好一会才如梦初醒，僵了一下身子，有些狼狈地把酒器放在床头柜上备好。</p>
+<p>“ゆきおさん也上来吧。”</p>
+<p>“欸、欸……嗯，那我也……”</p>
+<p>真的完全没有防备呢，かのんちゃん。或许也是因为她并没有那样不纯的心思吧……同性好朋友躺在一张床上，本就没有什么过多的深意，她自然也是不会想那么多的。中岛撬开酒瓶，浅尝辄止地往两个玻璃杯中倒入了三分之一左右。捧着其中一杯在床沿坐下，小心翼翼地双手递交给正起身往自己这里靠来的志崎，交接之间触到她温热的指尖，和冰冷的酒杯反差太过强烈，中岛再次不由自主停住了动作。</p>
+<p>房间里所有的光源都被关闭，仅余星象仪的投影散出幽幽的白光。志崎的脸逆着光看不真切，她歪了歪头，抿一口清酒，漏出一声轻叹，似乎是在催促些什么。</p>
+<p>“ゆっき？”</p>
+<p>“嗯，我来了。”</p>
+<p>自暴自弃地仰起脖子闷一口酒液，她很清楚清酒的品味方式不该是这样的粗野，但她却从中尝到了前所未有的奇异味道，头脑变得昏沉，产生了她或许真的在坠入星辰的错觉……又或者并不是错觉。有点不知轻重地把酒杯磕在床头柜上，“咚”的声响引来志崎的回头，中岛打着哈哈翻身上床，很是拘谨地把自己缩在床边一角，后脑勺的一小半都没有枕在枕头上，说实话，这个姿势很费力。</p>
+<p>“咦……怎么这么久都没有流星？啊，我忘记开开关了。”</p>
+<p>一如既往地在这种事上有些笨拙呢。这也是你魅力的一部分啊，かのんちゃん。</p>
+<p>志崎回身去找星象仪机身上的开关，因为没有光源所以找得有些艰难。她的半边身体挡住了星象仪的投影灯，在天花板上投下她的剪影，她轮廓立体的侧脸掩住万千星辰，似乎正在亲吻银河。</p>
+<p>“现在弄好了。”</p>
+<p>志崎从星象仪边上退开，重新将方才吞下的星星吐出，夜空再次变得完整，中岛却觉得残缺的模样更美。</p>
+<p>“ゆっき喜欢什么星座？”</p>
+<p>“我……不知道。我好像没想过这个问题？”</p>
+<p>“嗯……我喜欢处女座。”</p>
+<p>“诶，为什么？”</p>
+<p>“因为是ゆっき的生日星座。”</p>
+<p>“什么嘛。”</p>
+<p>黑暗中一切声音都被放大，代偿着吸收信息有限的视觉。布料摩擦的声响从身侧传来，声音的来源似乎越来越近……直到另一个人的气息打在耳边。</p>
+<p>“ゆきおさん觉得，你是牛郎，还是织女？”</p>
+<p>“咦？”</p>
+<p>话题跳跃得太快，又被心动的对象紧紧靠在身边，中岛拿志崎毫无办法。她无论是长相还是行为都如同诱人的魔女，虽然本人似乎毫无知觉。</p>
+<p>“かのんちゃん呢？你觉得你是什么？”</p>
+<p>在业界多年磨炼出来的接话能力救了她，如果被问了无法回答的问题，那就原样抛回去就是。</p>
+<p>“我也不知道呢。我只是觉得……ゆきおさん和我，就像牛郎织女一样。”</p>
+<p>“什、……”</p>
+<p>这又算是什么话呢？是在说她们像情侣吗？那为什么是牛郎织女？</p>
+<p>“今天是七夕，我现在才想起来。”</p>
+<p>“咦？七夕不是早就过了……”</p>
+<p>“旧历的七夕是今天哦。仙台也是今天办七夕祭呢，明年我想和ゆきおさん一起去，如果我们的工作都允许的话。”</p>
+<p>又是这么轻巧地就把话题转走，些许烦躁从腹部烧到胸口，中岛回身去喝了一口酒，感受酒液从喉咙滚下食道的烧灼感。</p>
+<p>“现在的ゆっき，就是ゆっき呢。果然在七夕就可以见到啊。”</p>
+<p>一句又一句不明所以的话语从她口中冒出，中岛已经放弃去理解，因为她的手正被包裹着，原本被空调吹得有些发冷的手心如今烫得吓人。</p>
+<p>“我……”爱意化为心跳，已经满得要溢出来，只能用酒来堪堪压住。这还让我如何忍耐？起初，我就是因为无法忍耐才不愿继续在你身边……</p>
+<p>“ゆっき，看着我。我想要真正的ゆっき，看到真正的我……”</p>
+<p>眼前的星空再次变得残缺。有温度、有气息的人代替了方才的剪影，一侧的脸颊被星象仪溢出的白光照得微微发亮。中岛的眼神聚焦在志崎如今处于她正上方的脸上，志崎背后的点点星光逐渐模糊成一个个小小的光圈。</p>
+<p>然后那片星空消失了。</p>
+<p>“唔……”</p>
+<p>一触即分。分明自己也有嘴唇，中岛却从来不知道人的嘴唇竟可以这样柔软。</p>
+<p>“会讨厌吗？明明不是在营业……”</p>
+<p>“怎么会……”</p>
+<p>“果然，是我喜欢的那个ゆきおさん呢。”</p>
+<p>“喜、喜欢？”</p>
+<p>“嗯。”</p>
+<p>专属于志崎桦音的深沉香气再一次将中岛紧紧包裹、缠绕，直到她像个溺水的人一样大口呼吸争夺氧气。她都不知道，自己接吻时竟然不会换气。</p>
+<p>“ゆっき，可爱。”</p>
+<p>“真是的……又在捉弄我了。”</p>
+<p>她看到志崎像只小猫一样撇下眉毛，脸上带了些委屈的神色。志崎沉下身子完全贴上中岛，把脑袋严丝合缝地放进中岛的颈窝。</p>
+<p>“ゆっき太瘦了，这里好硌。”</p>
+<p>她伸手指了指中岛平常引以为傲的漂亮锁骨，然后动动脑袋调整姿势。</p>
+<p>“对不起嘛。我会好好吃饭的。”</p>
+<p>“ゆっき喜欢我吗？我说，恋爱的那种。”</p>
+<p>“……嗯。明明刚才都亲过了，不应该亲之前就问吗？”</p>
+<p>“因为我不清楚ゆっき到底喜不喜欢我，之前不是一直都在躲着我。”</p>
+<p>都不知道就直接亲上去了吗？！这个人，还真是比想象的要更加糟糕啊……</p>
+<p>“对不起，かのんちゃん。我之前是怕自己把营业当真，怕我对你的感情影响你，才试图通过疏远你来降温……看来是失败了呢。”</p>
+<p>“嗯……我大概能明白。这样会给大人们带来很多困扰呢。”</p>
+<p>听到一向自由自在、不在乎任何繁文缛节的她说出这么“成熟”的话，中岛不知道是该欣慰还是该叹息。</p>
+<p>“嘛……现在也没办法了，不过我很开心哦，知道かのんちゃん也喜欢我。”</p>
+<p>“那ゆっき以后，每天都来我家看星星吧。”</p>
+<p>说是看星星，最后可是一点心思都没放在星星上呢，一边被热烈地吻着，中岛由贵一边如是想。</p>
 
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <h5><a href="/about/">千叶豆腐</a></h5>
-                    
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
-                    
-                </div>
-            </section>
-            
-
-            
-
-        </div>
+      
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 </div>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                
 
-                
 
-                
 
-                
+    
 
-                
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Tofu 2026
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <br>
-                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-                </p>
+<div class="post-block">
+  
+  
 
-            </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://jesscannon29.github.io/2026/02/01/yklssy%E4%B8%89%E4%BA%BA%E8%A1%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Tofu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tofu's Archive">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Tofu's Archive">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/02/01/yklssy%E4%B8%89%E4%BA%BA%E8%A1%8C/" class="post-title-link" itemprop="url">yklssy|三人行</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-02-01 17:17:00" itemprop="dateCreated datePublished" datetime="2026-02-01T17:17:00+08:00">2026-02-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-11-10 00:53:42" itemprop="dateModified" datetime="2026-11-10T00:53:42+08:00">2026-11-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BanG-Dream/" itemprop="url" rel="index"><span itemprop="name">BanG Dream!</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BanG-Dream/yklssy/" itemprop="url" rel="index"><span itemprop="name">yklssy</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>“哈啊……哈、嗯……”</p>
+<p>周末午后，窗帘半掩的公寓卧室内，进行这种旖旎之事真是再适合不过了——冰川纱夜一边用舌头服侍莉莎一边想着，丝毫不在乎滴滴答答向下滴落的液体，不知道是她的唾液还是莉莎的爱液，混合成泛着白沫的淫靡液体打湿了床单。</p>
+<p>只不过她似乎忽略了一件事——</p>
+<p>这里是湊友希那的卧室。</p>
+<p>“啊……！纱夜……唔……床单湿了……”</p>
+<p>“……今井さん，请专心。”纱夜略有不满地暂停了动作，腾出嘴来说教这个连做爱都管不住嘴瞎关心的老好人恋人。</p>
+<p>为了惩罚她在这种时候扫兴，纱夜握住她大腿的双手稍稍用力捏紧她丰腴的腿根，害得莉莎吃痛地呜呜叫起来，似乎是为了摆脱这个严厉的风纪委员，小腿不停拍打着在床尾堆成一团的被子，却是怎么样也无力挣脱。</p>
+<p>本来还很有余裕的舌也似乎是受到了激励，猛然加快了攻击莉莎敏感点的速度，每一次都大力用舌面按压充血肿胀的阴蒂，再在脱离时用舌尖一勾，莉莎被欺负得都没了叫喊的力气，本能地张大嘴急切地喘气，混着漏了气的尖叫声与厚重的水声在房间中回响。</p>
+<p>“吱呀——咚、”</p>
+<p>意识已经到达高潮的边缘，腿心的湿热呼吸突然换成了冰凉的空气，莉莎有点不满地从喉中发出撒娇的“嗯~”声，见纱夜不回答，她也逐渐回神睁开眼来。</p>
+<p>“莉莎？你在我家？”跟随着方才开关门的声响，是湊友希那越来越近的脚步声。</p>
+<p>糟了。</p>
+<p>本来是看准了友希那今天要出去录音，才主动求纱夜来友希那的房间寻刺激，她本来不是要吃过晚饭才回来的吗？</p>
+<p>纱夜也僵在了原地，下意识地擦了擦沾满体液而显得相当糟糕的脸，但无论如何是来不及掩饰了。</p>
+<p>“……纱夜？你能不能解释一下，你为什么会在我家？”</p>
+<p>门框中流进客厅的明亮阳光，友希那背着光抱着手臂立在门口，俨然一副抓包学生谈恋爱的班主任模样，只不过她微微发红的耳朵却是暴露了她骤然加快的心跳。</p>
+<p>“湊さん……”纱夜绞尽脑汁想不出一个合理理由，毕竟今天她确实是被莉莎引诱过来的，在恋人青梅竹马兼情敌的床上做也的确给了她别样的刺激。</p>
+<p>“那个……友希那？别生气？”莉莎抱起大腿，裸露的身体折叠起来，将刚刚还在被反复蹂躏的敏感带藏进视觉死角。</p>
+<p>“唉……是莉莎的主意？”</p>
+<p>纱夜不免感到脊背发凉。若是她的而非莉莎的主意，估计自家这个冷酷的主唱就要爆发了。</p>
+<p>“嗯……对不起嘛，不知道友希那结束得这么早……本来想做完了给你洗好床单，也不会有什么影响……”</p>
+<p>“我可不想晚上睡觉的时候闻到纱夜的味道。”倔强地别过头去，友希那觉得最近是不是有点太纵容莉莎了。</p>
+<p>“那、那留下友希那的味道就行了？”不知道是不是刚刚的快感弄得她昏头了，莉莎突然无厘头地说道。不过说不定她潜意识里相当渴望着这一幕的发生，毕竟分别被两个性欲旺盛的家伙索求着，就算自己再享受做爱也吃不消啊。如果能同时解决的话……？</p>
+<p>纱夜猛地转过头来瞪住莉莎，用口型说着“你认真的？”</p>
+<p>“……嗯。如果莉莎想的话。”</p>
+<p>这下换成床上的两个人同步瞪圆眼睛盯着友希那，然而她却是一脸无谓地耸耸肩，转身进了卫生间清洗双手，转过去的脸上带着莫名的期待。</p>
+<hr>
+<p>如果友希那不主动问，莉莎不会提起她与另一位恋人的床事，即使她问了，莉莎也只会睁大无辜的双眼盯着她看，笑嘻嘻地问她是不是在闹别扭，我们今天晚上就做好不好，和友希那做我很开心。</p>
+<p>明明她想要的不是这种答案。</p>
+<p>在纱夜的身下，你是不是也会像和我做时一样哭喊着高潮？和纱夜接吻时，你是不是也会坏心眼地堵起呼吸的通道，直到对方被迫分开后大口喘气，你再笑着重新吻上？纱夜的技术怎么样？你更喜欢和她做还是和我做？被纱夜玩弄时的你会发出什么样的声音，你睁开泪眼看着她时会想些什么？</p>
+<p>在意得不得了，又拉不下脸来和纱夜商量要不要一起做试试，这次的意外在令她稍微生气以外，还正巧给了她实践的好机会。</p>
+<p>作为Roselia的主唱，她永远会抓住任何机会。</p>
+<p>仔仔细细洗干净双手，友希那脱下外衣爬上床，略过了坐在床尾的纱夜就直接吻上了莉莎，伸出舌头将纱夜刚才留下的痕迹舔舐干净，再伸进莉莎的口腔与她的舌头猛烈交缠，发出“啧、啧”的水声。</p>
+<p>“嗯~友希那……”</p>
+<p>“莉莎，我们继续吧。”</p>
+<p>看着两人交叠在一起你侬我侬的身影，冰川纱夜很不是滋味。</p>
+<p>“湊さん，这样我碰不到今井さん了，请你让开点。”</p>
+<p>友希那只是面无表情地从莉莎身上抬起头，伸手将莉莎拉起来，让自己和莉莎交换了位置。</p>
+<p>“这样不就好了。”她从莉莎卷曲长发的缝隙里盯着黑着一张脸的纱夜看，莉莎丰满的胸部垂下来显得更加诱人，触到她的胸口，她故意伸手用力揉捏着莉莎的双峰，轻轻按压她早已因情事而充血立起的乳头，感受到她微微颤抖的滚烫身体。</p>
+<p>纱夜不甘示弱地贴上莉莎的后背，一只手扶住莉莎纤细却结实的腰，另一只手轻抚过她浑圆的臀部、感受到她期待的颤抖后便直接向下找到湿滑的入口，听到莉莎轻喃着“友希那~”的声音，她皱了皱眉头狠狠推入。</p>
+<p>“啊！纱夜……唔唔……”脱口而出身后人的名字，莉莎被突如其来的大力顶弄撞得直向前倾，友希那正因莉莎叫着纱夜的名字而不爽，这下直接借力封住莉莎的嘴唇，将呻吟全部变成了唇舌间的共振。</p>
+<p>“……”看不见莉莎的脸，只能看见友希那半张得意的笑脸，纱夜心里堵得慌，唯一的发泄方式只能是手指的动作。放弃了循序渐进，纱夜从一开始便直接用全身的力气带动手臂抽插，感受着莉莎甬道内的液体一股一股地被她的手指挤出，黏滑的水声传进耳朵，令她的呼吸也不自觉粗重起来。</p>
+<p>莉莎被撞得差点倒在了友希那身上，身体越伏越低，友希那几乎要抓不住她胸前的软肉，接吻也带着纱夜在后面抽插的节奏，没办法掌控莉莎身体的感觉让友希那很是烦躁。松开轻咬着莉莎嘴唇的牙齿，两手托住莉莎的腋下让她往自己身上再靠过来一点，引导她将手撑在自己身后的床头板上，莉莎的脸就靠在自己耳边，被另一个人弄出来的放浪呻吟攻击着友希那的耳膜，一边被激起了欲望，一边又被点燃了好胜心。</p>
+<p>友希那伸长手臂，从莉莎的锁骨出发一路向下抚摸，触到了小腹下方已经沾上不少体液的毛发，再向下摸索着拨开两片湿滑的阴唇，寻找着莉莎最为敏感的花核。一边亲吻着莉莎发红的耳廓一边将手指用莉莎的爱液完全沾湿，友希那感觉指尖似乎碰到了什么硬质的物体，有些发凉的体温和莉莎腿间的滚烫格格不入。她反应了两秒钟，总算意识到了这是纱夜的手指。</p>
+<p>“你挡着我了。”</p>
+<p>“是湊さん连位置都找不准。”</p>
+<p>眉毛立刻垮了下来，友希那报复似的精准找到莉莎的花核用力按下，如愿以偿地感受到了莉莎猛地颤抖一下，在自己耳边急促喘息着。</p>
+<p>忍不住微笑，友希那低头吻住莉莎紧绷的脖颈，用轻柔的舔舐安抚着陷入快感泥沼的莉莎，指腹在莉莎的阴蒂上画着圈抚弄着，还不忘抬眼望望那个正居高临下看着她的严肃吉他手。纱夜被她的眼神刺到，原本直进直出的手指勾起两个指节，从未感受过的剐蹭感又带给莉莎新一波的极乐浪潮，用手指感受到通道不停收缩的纱夜更加起劲地往深处顶去，每一次都用尽全力进得比上一次更深。</p>
+<p>现在的今井莉莎十分后悔，如果她还有余力感到后悔的话——谁能想到本以为能省时省力的三人行反而让她这两个好斗的恋人像小孩子一样争抢起来，而战利品则是自己……什么的，在抽插的间隙分心了一瞬，回神的瞬间又被大力顶入，再加上体外那不疾不徐却格外磨人的刺激，她已经不知道自己对此作何感想了，只能将被头发眼泪糊得一塌糊涂的脸埋进友希那的颈窝，在下一波快感来袭时张口咬住友希那单薄的肩膀。</p>
+<p>“嘶……”没什么赘肉的肩膀被猛力咬住，友希那吃痛地叫出了声，莉莎似乎是被友希那的声音刺激到，一下子眼前发白脱力往前趴，她猝不及防地高潮了。</p>
+<p>看到莉莎无力地整个人趴在友希那身上，还被友希那安抚般紧紧抱着，纱夜一面担心她的状态一面又忍不住烦躁：“今井さん？你还好吗？”</p>
+<p>“纱夜……我没力气了啦……”脸埋进了友希那枕着的枕头，只有一头凌乱的棕色卷发对着纱夜，纱夜只好侧躺下伸手环住莉莎的腰，用掌心一遍遍抚过她汗湿的背，心里默念着对她太过粗暴的道歉。</p>
+<p>“莉莎，刚才舒服吗？”</p>
+<p>明明才刚刚做完……扭了扭身体，小小地不满一下友希那发问的时机，莉莎反而很好奇，平时总是一言不发享受温存的友希那为何会像纱夜一样，突然那么在乎复盘欢爱的体验。</p>
+<p>“嗯……不如说是太舒服了啦……舒服到受不了了，真的要昏过去了……”</p>
+<p>“那真是太好了，莉莎你先休息一下吧。纱夜，我们配合得很好。”</p>
+<p>哈？这家伙在说些什么呢？正享受着余韵，纱夜猝不及防被友希那叫到名字，一脸问号地低头和还被莉莎压在身下的友希那对上眼神。难道说她其实很期待？</p>
+<p>“湊さん不生气么？明明是我擅自用了你的房间？”</p>
+<p>“如果这样能让莉莎更加满足，我觉得反而可以增加些频率。”</p>
+<p>“诶？”</p>
+<p>纱夜还没来得及回答，刚刚还把自己闷在友希那怀里的莉莎突然抬起头来，似乎是吓了一跳。怎么回事？这两个人刚才不还斗得起劲吗？</p>
+<p>“湊さん说得有道理。这样很有效率，而且效果也很好，非常值得一试。”</p>
+<p>“啊？”</p>
+<p>莉莎总觉得这句话她在昨天的反省会上听到过。</p>
+<p>看着主唱和吉他手惺惺相惜地互相凝望，今井莉莎感觉大事不妙。果然，下一秒她的视野就天旋地转，被纱夜从友希那的身上强行抱了起来，下意识就将腿缠上纱夜的腰，被纱夜稳稳地抱下床站在地上，后颈猝不及防地被友希那吹一口气，明明不冷却浑身止不住颤抖。未知的恐惧感促使她收紧了纱夜腰上环着的腿，把还未干涸的液体蹭上了纱夜的小腹，莉莎看到纱夜的耳根有点红。</p>
+<p>“事到如今还在害羞吗？纱夜同学？”</p>
+<p>开玩笑已经成了莉莎的本能，即便是这样的环境也挡不住她调侃自家这个不管在台上还是床上都一丝不苟的吉他手，只不过后果却是要她自己承担了。</p>
+<p>“……今井さん，看来你已经休息得差不多了。”</p>
+<p>纱夜压低嗓音在莉莎耳边轻柔地说<br>。<br>话音未落，纱夜便回正了脑袋找到莉莎已经被吻得红肿的嘴唇，由于双手托着莉莎的臀部将她抱起，她需要抬起头才能吻上莉莎，平时总是低头接吻，这样的姿势反倒挺新鲜。</p>
+<p>友希那从后面环住莉莎的腰，拨开莉莎厚重的长发，将细细密密的吻印在莉莎的后颈。平常被头发遮蔽的后颈皮肤敏感得让莉莎自己都不敢相信，一边忙着对抗纱夜在自己口腔里作乱的舌头，一边因后方的刺激而忍不住吸气，缺氧的头脑昏昏沉沉，眼前泛开密密麻麻的雪花纹路，手臂差点要抱不住纱夜的肩膀，在她的后背上胡乱抓挠着，留下几条浅浅的红印。</p>
+<p>“唔……嗯、快进来……友希那~”体内的空虚感令莉莎不停地扭动身体摩擦着纱夜的小腹，越发泛滥的腿间甚至已经打湿了纱夜的毛发，但只是带来了隔靴搔痒般的、如同折磨的微弱快感。这两个坏家伙……</p>
+<p>“嗯…呜呜……”</p>
+<p>见两人迟迟不肯有所动作，一面是确实委屈得掉眼泪，一面是知道没人能抵抗得了她的泪水攻势，莉莎趴在纱夜肩膀上小声啜泣起来。</p>
+<p>“莉莎……！那我进来了……”友希那贴着莉莎的后颈如此宣言，将细长的手指并在一起，找到入口处浅浅试探着，才刚刚进入一个指节，手指便如同被吸附一般缓慢地进入她潮湿的甬道，最终整根没入，只剩下被打湿的根部留在外面。</p>
+<p>才刚刚一进入，友希那便感受到了莉莎体内轻微的收缩感，看来今天她真的很有感觉。<br>友希那的手比纱夜要小些，手指的长度也比不过靠弹吉他吃饭的纱夜，肌肉力量也自叹不如她，但若是比较起来，友希那却是更擅长寻找莉莎敏感点的那个，每次撞击都能精准地顶到莉莎体内那块粗糙的小小突起，再勾起手指用力碾过，带给莉莎触电般的尖锐快感。</p>
+<p>“啊……嗯、呼……”</p>
+<p>被友希那顶得受不了，莉莎放开抱着纱夜的手想要逃跑，纱夜却是用力地稳住她的身体，甚至还配合着友希那的节奏上下振着，每一次友希那向上顶，纱夜就故意假装要松手，将莉莎的身体重重向下送进友希那的掌心，皮肉拍打在一起发出清脆的响声，越做越多的汁水顺着纱夜的腿往下流，在木地板上积成小小一潭。</p>
+<p>“哈……啊……！纱夜……纱夜……”</p>
+<p>“我在。”纱夜应声再次吻住莉莎，长时间抱着一个并不算轻的成年人，她已经有点体力不支了。一边接吻一边分出神来睁开一只眼睛示意友希那加速，她们要合力将莉莎送上顶峰。</p>
+<p>友希那将深埋在莉莎身体里的手指抽出，完全离开时她震了一下，似乎在埋怨着快感的消失。然而友希那这回却是将三根手指挤在一起，简单扩张过便长驱直入。</p>
+<p>“啊！友希那……呜……”</p>
+<p>“莉莎痛的话要讲。”</p>
+<p>说着这样的话，她很清楚莉莎完全受得了这样强烈的刺激，放在最深处让莉莎稍微适应之后就急促地抽插起来，将她紧致的阴道彻底撑开，她再也不用去刻意寻找莉莎的敏感点，因为三根手指的直径能令每一次的深入都满满地刮过每一寸内壁。被填满的快感和精准的刺激不一样，既酸胀又满足的感觉直冲大脑，莉莎已经发不出任何有意义的音节，只是紧绷着身体任凭自己被两人夹在中间上下弹动。</p>
+<p>“今井さん，看着我。”再也受不了莉莎对着自己耳朵发出的吟叫，冰川纱夜现在只想让她的眼里仅余自己一人。莉莎听话地从纱夜的肩膀上抬起头，半睁着迷离的双眼，水光潋滟的眼眸里是纯粹的欲望。爬满泪痕的脸颊泛着潮红，嘴角漏出方才接吻时未舔干净的津液，就这么看着她的脸，纱夜都觉得自己要失去理智了。</p>
+<p>用尽力气配合着友希那的抽插，感受不到莉莎体内情况的感觉让纱夜很是不安，只能通过撕咬着莉莎的锁骨来稍稍缓解。友希那也不断加大着力度，手指被不断夹紧的感觉令人上瘾，她知道莉莎快到了。</p>
+<p>“嗯……哈……哈啊…啊……！”</p>
+<p>随着灭顶的快感，莉莎的体内不停收缩绞紧了友希那的手指，高潮带来的液体一股脑地浇在友希那的手上，有几滴掉在地上，更多的则是顺着友希那的手臂缓缓流下。莉莎用狠劲死死抱住纱夜的后脑勺，纱夜的口鼻被用力埋进莉莎柔软的胸部，腰腹也被她结实的大腿猛力缠紧，纱夜差点以为自己要死在这里了。</p>
+<p>一瞬间，莉莎紧绷的身体便彻底放松下来，纱夜恢复呼吸的那一刹那也没了力气，友希那赶忙在后面扶了一把，才成功地让两人双双向后倒在床上，抱着莉莎的纱夜用力喘着粗气，似乎还未完全恢复神智。</p>
+<p>“呼……今井さん？……今井さん？？”</p>
+<p>“莉莎？”</p>
+<p>糟糕，这下玩得太过火了。</p>
+<p>躺在床上的莉莎已经彻底没了意识，身上四处是还没干涸的不明液体痕迹，锁骨上还有被纱夜咬出来的紫色淤青，现在正平稳的呼吸着，不知是睡着了还是昏迷了。</p>
+<p>友希那和纱夜尴尬地对视一眼，合力将莉莎的身体摆正，规规整整地枕好枕头，纱夜从床头取来一包湿纸巾来简单清理莉莎一塌糊涂的身体。</p>
+<p>等她醒来之后，一起道个歉吧……</p>
+
+      
     </div>
-</footer>
 
-<!-- jQuery -->
+    
+    
+    
 
-<script src="/js/jquery.min.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-
-<script src="/js/bootstrap.min.js"></script>
-
-
-<!-- Custom Theme JavaScript -->
-
-<script src="/js/blog.js"></script>
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://jesscannon29.github.io/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
-<!-- Google Analytics -->
 
 
+</div>
+  </main>
 
-<!-- Baidu Tongji -->
+  <footer class="footer">
+    <div class="footer-inner">
 
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tofu</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+    </div>
+  </footer>
 
-  _st('install','','2.0.0');
-</script>
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-<!--wechat title img-->
-<img class="wechat-title-img" src="">
 </body>
-
 </html>
